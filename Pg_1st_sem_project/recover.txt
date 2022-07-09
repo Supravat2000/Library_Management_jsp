@@ -1,0 +1,39 @@
+<%@ page import="java.text.SimpleDateFormat" %>  
+<%@page import="java.util.Date"%>  
+<%@include file="connect.jsp"%>
+<%@includefile="adminmenu.jsp"%>
+<!doctype html>
+<body>
+<form action ="abc.jsp" method=post>
+book_id<input type= text name=book_id>
+username<input type=text name=username>
+returndate<input type=text name=return_date>
+<input type =submit value=submit>
+</form>
+
+<%
+  try{
+	  String date1=request.getParameter("returndate");
+	  SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy",);
+	  Date date3=sdf.parse(date1);
+	  System.out.println(date3);
+	  String book_id1=request.getParameter("book_id");
+	  int book_id=Integer.parseInt(book_id1);
+	  String book_name=session.getAttribute("book_name").toString();
+	  String username =session.getAttribute("username").toString();
+      PreparedStatement pst=con.prepareStatement("delete from request_book where book_id=?");
+	  PreparedStatement pst1=con.prepareStatement("insert into checkout values(?,?)");
+
+	  pst.setInt(1,book_id);
+	  int t= pst.executeUpdate();
+	  if(t>0)
+		  out.println("<h3> Approve sucecessfull");
+	  con.close();
+  }
+  catch(Exception e)
+  {
+	  out.println(e);
+  }
+  %>
+  </body>
+  </html>

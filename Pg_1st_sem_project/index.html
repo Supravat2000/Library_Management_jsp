@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-14" />
+<title>Log in Page </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+<link href="https://fonts.googleapis.com/css2?family=Sofia" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./css/w3.css" />
+<link rel="stylesheet" type="text/css" href="./css/style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body bgcolor="cyan" >    	
+
+    	<br><br>
+    	<div class="w3-center">    	
+    	<div class="w3-container w3-center ">
+    		<div class="w3-panel w3-padding-16 w3-gray w3-round-xlarge w3-animate-top">
+    			<b><h4 class="w3-sofia font-effect-fire">Log_In Page</h4></b>
+    			
+    		</div>
+    		<div class="w3-card-4 w3-orange w3-round-xlarge w3-center w3-padding-16 w3-animate-bottom" style="width:100%;height: 140%;">
+    			<div class="w3-center">
+
+<center-left>
+<form action=adminvalidate.jsp  method=post>
+<div class="w3-left w3-card w3-cyan"><br><br>
+UserId<br>
+<input type=text name=id><br><br>
+Password <br>
+<Input type=password name=password><br><br>
+<input type=submit value=adminlogin><br><br>
+</form>
+</div>
+</center-left>
+<center-right>
+<form action=studentvalidate.jsp  method=post>
+<div class="w3-right w3-card w3-cyan"><br><br>
+UserName <br>
+<input type=text name=UserName><br><br>
+Password <br>
+<Input type=password name=password><br><br>
+<input type=submit value=studentlogin>
+</form>
+</div>
+</center-right>
+<left>
+<button onclick="location.href='newregis.jsp'">new user registration</button>
+</left>
+
+
+</body></html>
